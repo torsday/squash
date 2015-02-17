@@ -2,6 +2,8 @@
 
 require "set"
 
+abort("need a word to search") unless ARGV.length > 0
+
 match_list = Set.new
 ARGV.each do |arg|
   Dir.new('.').select{|f| f.downcase.match(/#{arg.downcase}/)}.each do |file|
